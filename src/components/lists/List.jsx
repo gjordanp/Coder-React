@@ -1,13 +1,20 @@
 import React from 'react'
+import styles from './list.module.css'
 
-
-
-const List = ({list}) => {
+export const ListH = ({list}) => {
   return (
-    <ul>
-        {list.map((item, index) => (<li key={index}>{item}</li>))}
+    <ul className={styles.horizontal}>
+      {list.map((item, index) => { return <li key={index}>{item}</li> })}
     </ul>
   )
 }
 
-export default List
+export const ListV = ({list}) => {
+  return (
+    <ul className={styles.vertical}>
+      {list.map((item, index) => { return <li key={index}>{item}</li> })}
+    </ul>
+  )
+}
+
+

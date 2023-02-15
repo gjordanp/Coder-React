@@ -1,4 +1,5 @@
 import React from 'react'
+import {ListH, ListV} from '../lists/List'
 import styles from './navbar.module.css'
 
 
@@ -6,11 +7,7 @@ const NavBar = () => {
     return (
         <div className={styles.container}>
             <h2>NavBar</h2>
-            <ul>
-                <li>Home</li>
-                <li>About</li>
-                <li>Contact</li>
-            </ul>
+            <ListH list = {["Inicio", "Nosotros", "Contacto"]}></ListH>
         </div>
     )
 }
