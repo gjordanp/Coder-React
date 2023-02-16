@@ -12,3 +12,7 @@
   align-items: center;
   gap: 10px;
 }
+
+.mouseoverpointer{
+  cursor: pointer;
+}
