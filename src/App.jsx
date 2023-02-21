@@ -7,7 +7,7 @@ import {ListH, ListV} from './components/lists/List'
 import ItemListContainer from './components/containers/ItemListContainer'
 
 
-const handleClick = (e) => {alert("Click en " + e.target.innerText)}
+const handleClick = (e) => {alert(e.target.innerText)}
 
 function App() {
 
