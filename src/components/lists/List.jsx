@@ -4,12 +4,12 @@ import Button from '../buttons/button'
 
 
 
-export const ListH = ({ list, handleClick }) => {
+export const ListH = ({ list, setBtnText , setShowAlert }) => {
   return (
     <ul className={styles.horizontal}>
       {list.map((item, index) => {
         return <li key={index} onMouseOver={styles.mouseOverPointer}>
-          <Button text={item} handleClick={handleClick}>{item}</Button>
+          <Button text={item} setBtnText={setBtnText} setShowAlert={setShowAlert}>{item}</Button>
         </li>
       })}
     </ul>

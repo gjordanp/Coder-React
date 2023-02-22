@@ -1,9 +1,13 @@
 import React from 'react'
 import styles from './ItemListContainer.module.css'
+import flykiteLogo from '../../assets/flykite-logo.svg'
 
 const ItemListContainer = (props) => {
   return (
-    <div className={styles.container}>{props.greetings}</div>
+    <div className={styles.container}>
+      <img src={flykiteLogo} width="150" alt="" />
+      {props.greetings}
+    </div>
   )
 }
 
