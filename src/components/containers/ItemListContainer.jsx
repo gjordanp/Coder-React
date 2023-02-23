@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './ItemListContainer.module.css'
+import styles from './itemlistcontainer.module.css'
 import flykiteLogo from '../../assets/flykite-logo.svg'
 
 const ItemListContainer = (props) => {
