@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './list.module.css'
-import Button from '../buttons/button'
+import Button from '../buttons/Button'
 
 
 

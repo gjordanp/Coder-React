@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
-import Button from './components/buttons/button'
+import Button from './components/buttons/Button'
 import NavBar from './components/navbar/NavBar'
 import { ListH, ListV } from './components/lists/List'
 import ItemListContainer from './components/containers/ItemListContainer'
