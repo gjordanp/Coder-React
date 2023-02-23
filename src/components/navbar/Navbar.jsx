@@ -8,14 +8,14 @@ const categories=["Velas", "Barras", "Tablas", "Accesorios", <CartWidget notific
 
 const NavBar = ({title,setBtnText,setShowAlert}) => {
     return (
-        <div className={styles.container}>
+        <nav className={styles.container}>
             <div className={styles.logoContainer}>
                 <img src={flykiteLogo} width="80" height="80" alt="" />
                 <h2>{title}</h2>
             </div>
             <ListH list={categories} setBtnText={setBtnText} setShowAlert={setShowAlert}></ListH>
             {/* <CartWidget notifications="3" /> */}
-        </div>
+        </nav>
     )
 }
 
