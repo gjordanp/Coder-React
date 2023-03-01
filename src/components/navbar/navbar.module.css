@@ -1,4 +1,4 @@
-.container{
+.container {
     background-color: #000;
     color: #fff;
     font-size: 1.0rem;
@@ -15,9 +15,16 @@
     z-index: 1;
 }
 
-.logoContainer{
+@media (max-width: 768px) {
+    .container {
+        display: none;
+    }
+}
+
+.logoContainer {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+    gap: 10px;
 }
