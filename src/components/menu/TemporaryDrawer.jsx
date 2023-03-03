@@ -11,30 +11,38 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import { useState, useEffect } from 'react';
+import { SwipeableDrawer } from '@mui/material';
 
-export default function TemporaryDrawer({anchor, open}) {
-  const [state, setState] = useState(false);
-  useEffect(() => {setState(open)}, [open])
+export default function TemporaryDrawer({ anchor, open }) {
+  const [state, setState] = React.useState({
+    top: false,
+    left: false,
+    bottom: false,
+    right: false,
+  });
+  //const [state, setState] = useState(false);
+  // useEffect(() => {setState(false); console.log({state})}, [])
+  //useEffect(() => { setState(true); console.log({ state }) }, [open])
+  useEffect(() => { toggleDrawer(anchor, true)}, [open])
 
   const toggleDrawer = (anchor, open) => (event) => {
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
       return;
     }
 
-    setState(open);
+    setState({ ...state, [anchor]: open });
+    console.log(state);
   };
 
-  const handleState = () => {open=!open};
- const handleStateClose = () => {setState(false)};
- const handleStateOpen = () => {setState(true)};
+  const handleState = (op) => { setState(op); console.log("handleState: " + { state }) };
 
-  
+
   const list = (anchor) => (
     <Box
       sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
       role="presentation"
-      onClick={handleState}
-      onKeyDown={handleState}
+      onClick={() => { setState(false) }}
+      onKeyDown={() => { setState(false) }}
     // onClick={handleState}
     // onKeyDown={handleState}
     >
@@ -68,18 +76,18 @@ export default function TemporaryDrawer({anchor, open}) {
 
   return (
     <div>
-        <React.Fragment key={anchor}>
-          {/* <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button> */}
-          
-          <Drawer
-            anchor={anchor}
-            open={open}
-            // onClose={toggleDrawer(anchor, false)}
-            onClose={handleState}
-          >
-            {list(anchor)}
-          </Drawer>
-        </React.Fragment>
+      <React.Fragment key={anchor}>
+        {/* <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button> */}
+        <Drawer
+          anchor={anchor}
+          open={state[anchor]}
+          onClose={toggleDrawer(anchor, false)}
+        //onOpen={handleStateOpen}
+        //onClose={handleState}
+        >
+          {list(anchor)}
+        </Drawer>
+      </React.Fragment>
     </div>
   );
 }

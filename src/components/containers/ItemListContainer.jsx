@@ -5,7 +5,7 @@ import flykiteLogo from '../../assets/flykite-logo.svg'
 const ItemListContainer = (props) => {
   return (
     <div className={styles.container}>
-      <img src={flykiteLogo} width="150" alt="" />
+      {/* <img src={flykiteLogo} width="150" alt="" /> */}
       {props.greetings}
     </div>
   )
