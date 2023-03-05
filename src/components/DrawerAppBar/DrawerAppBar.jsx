@@ -51,9 +51,9 @@ function DrawerAppBar(props) {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      
+
       <Typography className={styles.logocontainer} variant="h6" sx={{ my: 2 }}>
-      <img src={flykiteLogo} width="40px"  alt="" /> FlyKite
+        <img src={flykiteLogo} width="40px" alt="" /> FlyKite
       </Typography>
       <Divider />
       <List>
@@ -85,12 +85,15 @@ function DrawerAppBar(props) {
             >
               <MenuIcon />
             </IconButton>
+            <Box sx={{ flexgrow:1,display: { xs: 'flex', sm: 'flex' }, margin:'auto'}}>
+              <img src={flykiteLogo} width="40px" alt="" />
+              <h3>FlyKite</h3>
+            </Box>
             <Typography
               variant="h6"
               component="div"
               sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
             >
-              FlyKite
             </Typography>
             <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
               {navItems.map((item) => (
