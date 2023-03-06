@@ -11,7 +11,7 @@ import DrawerAppBar from '../DrawerAppBar/DrawerAppBar'
 const categories = ["Velas", "Barras", "Tablas", "Accesorios", <CartWidget notifications="3" />];
 
 
-const NavBar = ({ title, setBtnText, setShowAlert }) => {
+const NavBar = () => {
     return (
         <>
             {/* <nav className={styles.container}>

@@ -15,14 +15,16 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import CartWidget from '../navbar/CartWidget';
-import { createTheme } from '@mui/material';
+import { createTheme, Tooltip } from '@mui/material';
 import { ThemeProvider } from '@emotion/react';
 import flykiteLogo from '../../assets/flykite-logo.svg';
 import styles from './DrawerAppBar.module.css';
+import { Link, NavLink } from 'react-router-dom';
 
 const drawerWidth = 240;
 //const navItems = ['Home', 'About', 'Contact'];
-const navItems = ["Velas", "Barras", "Tablas", "Accesorios", <CartWidget notifications="3" />];
+//const navItems = ["Velas", "Barras", "Tablas", "Accesorios", <CartWidget notifications="3" />];
+const navItems = ["men's clothing", "jewelery", "electronics", "women's clothing", <CartWidget notifications="3" />];
 
 const darkTheme = createTheme({
   palette: {
@@ -41,6 +43,10 @@ const darkTheme = createTheme({
   },
 });
 
+let activeStyle = {
+  textDecoration: "underline",
+};
+
 function DrawerAppBar(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -58,11 +64,13 @@ function DrawerAppBar(props) {
       <Divider />
       <List>
         {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item} />
-            </ListItemButton>
-          </ListItem>
+          <NavLink to={`/categories/${item}`} key={item}>
+            <ListItem key={item} disablePadding>
+              <ListItemButton sx={{ textAlign: 'center' }}>
+                <ListItemText primary={item} />
+              </ListItemButton>
+            </ListItem>
+          </NavLink>
         ))}
       </List>
     </Box>
@@ -75,6 +83,7 @@ function DrawerAppBar(props) {
       <CssBaseline />
       <ThemeProvider theme={darkTheme}>
         <AppBar component="nav" color="primary">
+
           <Toolbar>
             <IconButton
               color="inherit"
@@ -85,10 +94,14 @@ function DrawerAppBar(props) {
             >
               <MenuIcon />
             </IconButton>
-            <Box sx={{ flexgrow:1,display: { xs: 'flex', sm: 'flex' }, margin:'auto'}}>
-              <img src={flykiteLogo} width="40px" alt="" />
-              <h3>FlyKite</h3>
-            </Box>
+            <Tooltip title="Home" >
+              <Link to={`/Coder-React`} style={{ textDecoration: "none", color: "inherit" }}>
+                <Box sx={{ display: { xs: 'flex', sm: 'flex' }, margin: 'auto' }}>
+                  <img src={flykiteLogo} width="40px" alt="" />
+                  <h3>FlyKite</h3>
+                </Box>
+              </Link>
+            </Tooltip>
             <Typography
               variant="h6"
               component="div"
@@ -97,9 +110,11 @@ function DrawerAppBar(props) {
             </Typography>
             <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
               {navItems.map((item) => (
-                <Button key={item} sx={{ color: '#fff' }}>
-                  {item}
-                </Button>
+                <NavLink to={`/Coder-React/categories/${item}`} key={item}>
+                  <Button key={item} sx={{ color: '#fff' }}>
+                    {item}
+                  </Button>
+                </NavLink>
               ))}
             </Box>
           </Toolbar>

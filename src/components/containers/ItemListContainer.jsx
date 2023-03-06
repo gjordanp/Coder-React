@@ -1,12 +1,19 @@
-import React from 'react'
+import ActionAreaCard from '../Card/ActionAreaCard'
 import styles from './itemlistcontainer.module.css'
-import flykiteLogo from '../../assets/flykite-logo.svg'
+import { Link, useParams } from 'react-router-dom'
 
-const ItemListContainer = (props) => {
+
+const ItemListContainer = ({ products }) => {
+  const cardProps={maxWidth:345,height:200,showRating:true,showPrice:true,showDescription:false}
+  const { cat } = useParams();
+  if (cat) { products = products.filter((product) => product.category === cat) }
   return (
     <div className={styles.container}>
-      {/* <img src={flykiteLogo} width="150" alt="" /> */}
-      {props.greetings}
+      {products.map((product =>
+        <Link to={`/Coder-React/item/${product.id}`}>
+          <ActionAreaCard key={product.id} product={product} cardProps={cardProps}/>
+        </Link>
+      ))}
     </div>
   )
 }
