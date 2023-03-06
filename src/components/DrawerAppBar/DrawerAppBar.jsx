@@ -64,7 +64,7 @@ function DrawerAppBar(props) {
       <Divider />
       <List>
         {navItems.map((item) => (
-          <NavLink to={`/categories/${item}`} key={item}>
+          <NavLink to={`/Coder-React/categories/${item}`} key={item}>
             <ListItem key={item} disablePadding>
               <ListItemButton sx={{ textAlign: 'center' }}>
                 <ListItemText primary={item} />
