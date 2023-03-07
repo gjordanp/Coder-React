@@ -14,3 +14,7 @@
   align-content: center;
   width: auto;
 }
+
+.logoImg{
+  filter: invert(0.5) sepia(1) saturate(5) hue-rotate(175deg);
+}

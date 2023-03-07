@@ -7,12 +7,15 @@
   padding-left: 200px;
   padding-right: 200px;
   justify-content: center;
-  align-items: top;
+  align-items: center;
   gap: 50px;
-  background-color: #ffffff;
+  background-color: #f3f3f3;
   font-size: 2rem;
   font-weight: 600;
   color: black;
+  min-width: 100vw;
+  min-height: 100vh;
+  overflow: hidden;
 }
 
 @media (max-width: 600px) {

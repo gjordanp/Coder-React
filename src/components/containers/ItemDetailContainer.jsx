@@ -9,7 +9,7 @@ function ItemDetailContainer({ products }) {
     const cardProps = { maxWidth: "80vw", height: 350, showRating: true, showPrice: true, showDescription: true }
     return (
         <div className={styles.container}>
-            <ActionAreaCard key={product.id} product={product} cardProps={cardProps} />
+            <ActionAreaCard key={product.id} product={product} cardProps={cardProps}/>
         </div>
     )
 }

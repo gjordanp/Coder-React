@@ -9,7 +9,7 @@ export default function ActionAreaCard({ product, cardProps }) {
   //const cardProps={maxWidth:345,height:200,showRating:true,showPrice:true,showDescription:true}
 
   return (
-    <Card sx={{ maxWidth: cardProps.maxWidth, width: cardProps.maxWidth }}>
+    <Card sx={{ maxWidth: cardProps.maxWidth, width: cardProps.maxWidth , borderRadius:"20px"}}>
       <CardActionArea>
         <CardMedia
           component="img"

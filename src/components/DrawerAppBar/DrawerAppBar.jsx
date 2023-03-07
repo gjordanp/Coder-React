@@ -18,6 +18,7 @@ import CartWidget from '../navbar/CartWidget';
 import { createTheme, Tooltip } from '@mui/material';
 import { ThemeProvider } from '@emotion/react';
 import flykiteLogo from '../../assets/flykite-logo.svg';
+import flykiteLogoBlack from '../../assets/flykite-logo-bl.svg';
 import styles from './DrawerAppBar.module.css';
 import { Link, NavLink } from 'react-router-dom';
 
@@ -58,13 +59,14 @@ function DrawerAppBar(props) {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
 
-      <Typography className={styles.logocontainer} variant="h6" sx={{ my: 2 }}>
-        <img src={flykiteLogo} width="40px" alt="" /> FlyKite
+      <Typography className={styles.logocontainer} variant="h6" sx={{ my: 1 }}>
+        <img src={flykiteLogoBlack} width="40px" alt="" style={{opacity:0.85}}/> 
+        <h4>FlyKite</h4>
       </Typography>
       <Divider />
       <List>
         {navItems.map((item) => (
-          <NavLink to={`/Coder-React/categories/${item}`} key={item}>
+          <NavLink to={`/Coder-React/categories/${item}`} key={item} style={{ textDecoration: "none", color: "inherit" }}>
             <ListItem key={item} disablePadding>
               <ListItemButton sx={{ textAlign: 'center' }}>
                 <ListItemText primary={item} />
