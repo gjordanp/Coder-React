@@ -3,13 +3,18 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { CardActionArea, Rating } from '@mui/material';
+import { CardActionArea, CardActions, IconButton, Rating } from '@mui/material';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
+import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
+import ItemCount from '../ItemCount/ItemCount';
+import { useState } from 'react';
 
 export default function ActionAreaCard({ product, cardProps }) {
   //const cardProps={maxWidth:345,height:200,showRating:true,showPrice:true,showDescription:true}
-
+  const [productItems, setProductItems] = useState(0);
   return (
-    <Card sx={{ maxWidth: cardProps.maxWidth, width: cardProps.maxWidth , borderRadius:"20px"}}>
+    <Card sx={{ maxWidth: cardProps.maxWidth, width: cardProps.maxWidth, borderRadius: "20px" }}>
       <CardActionArea>
         <CardMedia
           component="img"
@@ -34,6 +39,10 @@ export default function ActionAreaCard({ product, cardProps }) {
           {cardProps.showRating && <Rating name="read-only" value={product.rating.rate} readOnly />}
         </CardContent>
       </CardActionArea>
+      {cardProps.showActions &&
+        <CardActions>
+          <ItemCount stock={5} initial={1}/>
+        </CardActions>}
     </Card>
   );
 }

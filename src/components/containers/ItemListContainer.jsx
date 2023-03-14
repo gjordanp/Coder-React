@@ -4,7 +4,7 @@ import { Link, useParams } from 'react-router-dom'
 
 
 const ItemListContainer = ({ products }) => {
-  const cardProps={maxWidth:345,height:200,showRating:true,showPrice:true,showDescription:false}
+  const cardProps={maxWidth:345,height:200,showRating:true,showPrice:true,showDescription:false,showActions: false }
   const { cat } = useParams();
   if (cat) { products = products.filter((product) => product.category === cat) }
   return (

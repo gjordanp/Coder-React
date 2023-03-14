@@ -6,7 +6,7 @@ import styles from './itemdetailcontainer.module.css'
 function ItemDetailContainer({ products }) {
     const { id } = useParams();
     const product = products.find(product => product.id == id)
-    const cardProps = { maxWidth: "80vw", height: 350, showRating: true, showPrice: true, showDescription: true }
+    const cardProps = { maxWidth: "80vw", height: 350, showRating: true, showPrice: true, showDescription: true, showActions: true }
     return (
         <div className={styles.container}>
             <ActionAreaCard key={product.id} product={product} cardProps={cardProps}/>

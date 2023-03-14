@@ -14,6 +14,7 @@ import ItemDetailContainer from './components/containers/ItemDetailContainer'
 function App() {
 
   const [products, setProducts] = useState([])
+  const [cartProducts, setCartProducts] = useState([])
   const getProducts = async () => {
     const response = await axios.get('https://fakestoreapi.com/products')
     setProducts(response.data)
