@@ -9,10 +9,12 @@ import AddCircleIcon from '@mui/icons-material/AddCircle';
 import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
 import ItemCount from '../ItemCount/ItemCount';
 import { useState } from 'react';
+import { useContext } from 'react';
 
 export default function ActionAreaCard({ product, cardProps }) {
   //const cardProps={maxWidth:345,height:200,showRating:true,showPrice:true,showDescription:true}
   const [productItems, setProductItems] = useState(0);
+  
   return (
     <Card sx={{ maxWidth: cardProps.maxWidth, width: cardProps.maxWidth, borderRadius: "20px" }}>
       <CardActionArea>
@@ -41,7 +43,7 @@ export default function ActionAreaCard({ product, cardProps }) {
       </CardActionArea>
       {cardProps.showActions &&
         <CardActions>
-          <ItemCount stock={5} initial={1}/>
+          <ItemCount product={product} stock={5} initial={1}/>
         </CardActions>}
     </Card>
   );

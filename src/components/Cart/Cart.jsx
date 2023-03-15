@@ -1,15 +1,20 @@
 import { IconButton } from '@mui/material'
-import React from 'react'
+import React, { useContext } from 'react'
 import styles from './cart.module.css'
 import DeleteIcon from '@mui/icons-material/Delete';
+import { CartContext } from '../../contexts/CartContextProvider';
 
-function Cart({ cartProducts }) {
+function Cart() 
+{
+    const { cartList, addToCart, clear, removeItem } = useContext(CartContext);
     return (
+        
         <div className={styles.cartcontainer}>
-            {cartProducts.map((product) =>
+            {cartList.map((item) =>
                 <div className={styles.cartcard}>
-                    <img src={product.img} alt="" width="20px" />
-                    <h3>{product.title}</h3>
+                    <img src={item.product.image} alt="img" width={50} />
+                    {/* <h3>{item.product.title}</h3> */}
+                    <h3>{"Cantidad: "+item.quantity}</h3>
                     <IconButton aria-label="delete">
                         <DeleteIcon />
                     </IconButton>

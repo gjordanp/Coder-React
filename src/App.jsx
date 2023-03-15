@@ -9,6 +9,8 @@ import { Alert, AlertTitle, Snackbar } from '@mui/material'
 import axios from 'axios'
 import { Routes, Route } from 'react-router-dom'
 import ItemDetailContainer from './components/containers/ItemDetailContainer'
+import { CartContextProvider } from './contexts/CartContextProvider'
+import Cart from './components/Cart/Cart'
 
 
 function App() {
@@ -19,11 +21,11 @@ function App() {
     const response = await axios.get('https://fakestoreapi.com/products')
     setProducts(response.data)
   };
-  const categories=products.map((product)=>product.category);
+  const categories = products.map((product) => product.category);
   useEffect(() => {
-    getProducts(); console.log(products);
+    getProducts();
   }, [])
-  
+
   //With Fetch
   // useEffect(() => {
   //   fetch('https://fakestoreapi.com/products')
@@ -36,14 +38,16 @@ function App() {
     //React Fragment
     <>
       <NavBar categories={categories} />
-      <Routes>
-        <Route path='/Coder-React' element={<ItemListContainer products={products} />} />
-        {/* <Route path='/products' element={<ProductList products={products}/>}/> */}
-        <Route path='/Coder-React/categories/:cat' element={<ItemListContainer products={products} />}/>
-        <Route path='/Coder-React/item/:id' element={<ItemDetailContainer products={products} />}/>
-        <Route path='*' element={<h1>404 Not Found</h1>} />
-      </Routes>
-
+      <CartContextProvider children={
+        <Routes>
+          <Route path='/Coder-React' element={<ItemListContainer products={products} />} />
+          {/* <Route path='/products' element={<ProductList products={products}/>}/> */}
+          <Route path='/Coder-React/categories/:cat' element={<ItemListContainer products={products} />} />
+          <Route path='/Coder-React/item/:id' element={<ItemDetailContainer products={products} />} />
+          <Route path='/Coder-React/cart' element={<Cart/>} />
+          <Route path='*' element={<h1>404 Not Found</h1>} />
+        </Routes>
+      } />
     </>
   )
 }

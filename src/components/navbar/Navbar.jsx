@@ -8,22 +8,13 @@ import ResponsiveAppBar from './ResponsiveAppBar'
 import DrawerAppBar from '../DrawerAppBar/DrawerAppBar'
 
 
-const categories = ["Velas", "Barras", "Tablas", "Accesorios", <CartWidget notifications="3" />];
+const categories = ["Velas", "Barras", "Tablas", "Accesorios"];
 
 
 const NavBar = () => {
     return (
         <>
-            {/* <nav className={styles.container}>
-                <div className={styles.logoContainer}>
-                    <img src={flykiteLogo} width="70" height="70" alt="" />
-                    <h2>{title}</h2>
-                </div>
-                <ListH list={categories} setBtnText={setBtnText} setShowAlert={setShowAlert}></ListH>
-            </nav>
-            <ResponsiveAppBar/> */}
             <DrawerAppBar />
-
         </>
 
     )

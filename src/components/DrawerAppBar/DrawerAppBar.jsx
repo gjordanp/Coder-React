@@ -25,7 +25,7 @@ import { Link, NavLink } from 'react-router-dom';
 const drawerWidth = 240;
 //const navItems = ['Home', 'About', 'Contact'];
 //const navItems = ["Velas", "Barras", "Tablas", "Accesorios", <CartWidget notifications="3" />];
-const navItems = ["men's clothing", "jewelery", "electronics", "women's clothing", <CartWidget notifications="3" />];
+const navItems = ["men's clothing", "jewelery", "electronics", "women's clothing"];
 
 const darkTheme = createTheme({
   palette: {
@@ -59,9 +59,9 @@ function DrawerAppBar(props) {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
 
-      <Typography className={styles.logocontainer} variant="h6" sx={{ my: 1 }}>
+      <Typography className={styles.logocontainer} variant="h4" sx={{ my: 1 }}>
         <img src={flykiteLogoBlack} width="40px" alt="" style={{opacity:0.85}}/> 
-        <h4>FlyKite</h4>
+        <p>FlyKite</p>
       </Typography>
       <Divider />
       <List>
@@ -74,6 +74,13 @@ function DrawerAppBar(props) {
             </ListItem>
           </NavLink>
         ))}
+          <NavLink to={"/Coder-React/cart"} key={"cart"} style={{ textDecoration: "none", color: "inherit" }}>
+            <ListItem key={"cart"} disablePadding>
+              <ListItemButton sx={{ textAlign: 'center' }}>
+              <ListItemText primary={<CartWidget notifications="3"/>} />
+              </ListItemButton>
+            </ListItem>
+          </NavLink>
       </List>
     </Box>
   );
@@ -105,7 +112,7 @@ function DrawerAppBar(props) {
               </Link>
             </Tooltip>
             <Typography
-              variant="h6"
+              variant="h4"
               component="div"
               sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
             >
@@ -118,6 +125,11 @@ function DrawerAppBar(props) {
                   </Button>
                 </NavLink>
               ))}
+                 <NavLink to={`/Coder-React/cart`} key={"cart"}>
+                  <Button key={"cart"} sx={{ color: '#fff' }}>
+                    {<CartWidget notifications="3" />}
+                  </Button>
+                </NavLink>
             </Box>
           </Toolbar>
         </AppBar></ThemeProvider>

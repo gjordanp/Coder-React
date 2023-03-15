@@ -10,7 +10,7 @@ const ItemListContainer = ({ products }) => {
   return (
     <div className={styles.container}>
       {products.map((product =>
-        <Link to={`/Coder-React/item/${product.id}`}>
+        <Link to={`/Coder-React/item/${product.id}`} key={product.id}>
           <ActionAreaCard key={product.id} product={product} cardProps={cardProps}/>
         </Link>
       ))}
