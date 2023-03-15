@@ -4,26 +4,22 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea, CardActions, IconButton, Rating } from '@mui/material';
-import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
-import AddCircleIcon from '@mui/icons-material/AddCircle';
-import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
 import ItemCount from '../ItemCount/ItemCount';
 import { useState } from 'react';
-import { useContext } from 'react';
 
 export default function ActionAreaCard({ product, cardProps }) {
   //const cardProps={maxWidth:345,height:200,showRating:true,showPrice:true,showDescription:true}
   const [productItems, setProductItems] = useState(0);
   
   return (
-    <Card sx={{ maxWidth: cardProps.maxWidth, width: cardProps.maxWidth, borderRadius: "20px" }}>
+    <Card sx={{ maxWidth: cardProps.maxWidth, width: cardProps.maxWidth, borderRadius: "20px", alignSelf: "top"}}>
       <CardActionArea>
         <CardMedia
           component="img"
           height={cardProps.height}
           image={product.image}
           alt={product.title}
-          sx={{ objectFit: "contain", width: cardProps.height, marginLeft: "auto", marginRight: "auto" }} />
+          sx={{ objectFit: "contain", width: cardProps.height, marginLeft: "auto", marginRight: "auto"}} />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             {product.title}
