@@ -19,9 +19,9 @@ export default function ActionAreaCard({ product, cardProps }) {
           height={cardProps.height}
           image={product.image}
           alt={product.title}
-          sx={{ objectFit: "contain", width: cardProps.height, marginLeft: "auto", marginRight: "auto"}} />
+          sx={{ objectFit: "contain", width: cardProps.height, marginLeft: "auto", marginRight: "auto" , marginTop: "15px"}} />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography gutterBottom variant="h6" component="div">
             {product.title}
           </Typography>
           {cardProps.showDescription &&
@@ -30,7 +30,7 @@ export default function ActionAreaCard({ product, cardProps }) {
             </Typography>
           }
           {cardProps.showPrice &&
-            <Typography gutterBottom variant="h5" component="div">
+            <Typography gutterBottom variant="h6" component="div">
               {"$" + product.price}
             </Typography>
           }
