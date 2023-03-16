@@ -36,9 +36,9 @@ function App() {
 
   return (
     //React Fragment
-    <>
-      <NavBar categories={categories} />
       <CartContextProvider children={
+        <>
+        <NavBar categories={categories} />
         <Routes>
           <Route path='/Coder-React' element={<ItemListContainer products={products} />} />
           {/* <Route path='/products' element={<ProductList products={products}/>}/> */}
@@ -47,8 +47,8 @@ function App() {
           <Route path='/Coder-React/cart' element={<Cart/>} />
           <Route path='*' element={<h1>404 Not Found</h1>} />
         </Routes>
+        </>
       } />
-    </>
   )
 }
 

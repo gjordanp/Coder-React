@@ -4,9 +4,8 @@ export const CartContext = createContext();
 
 export const CartContextProvider = ({ children }) => {
     const [cartList, setCartList] = useState([]);
-    const addToCart = (product, qty) => { 
-        console.log("producto añadido") //implementa la funcionalidad para agregar un producto al carrito
-        setCartList([...cartList, { "product":product, "quantity":qty }])
+    const addToCart = (product, qty) => {//implementa la funcionalidad para agregar un producto al carrito
+        setCartList([...cartList, { "product": product, "quantity": qty }])
     }
     const clear = () => {	//implementa la funcionalidad para dejar el carrito vacío
         setCartList([])
@@ -18,8 +17,13 @@ export const CartContextProvider = ({ children }) => {
         return cartList.some((obj) => obj.product.id === id)
     }
 
+    const resetQty = (id, qty) => {	//implementa la funcionalidad para resetear la cantidad de un producto en el carrito
+        setCartList(cartList.map((obj) => obj.product.id === id ? { "product": obj.product, "quantity": qty } : obj));
+    }
+
+
     return (
-        <CartContext.Provider value={{ cartList, addToCart, clear, removeItem }}>
+        <CartContext.Provider value={{ cartList, addToCart, clear, removeItem, isInCart, resetQty }}>
             {children}
         </CartContext.Provider>
     )

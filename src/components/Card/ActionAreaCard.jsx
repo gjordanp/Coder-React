@@ -39,7 +39,7 @@ export default function ActionAreaCard({ product, cardProps }) {
       </CardActionArea>
       {cardProps.showActions &&
         <CardActions>
-          <ItemCount product={product} stock={5} initial={1}/>
+          <ItemCount product={product} stock={5} initial={1} hideAddToCart={false}/>
         </CardActions>}
     </Card>
   );
