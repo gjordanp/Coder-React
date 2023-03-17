@@ -7,7 +7,7 @@ import { CardActionArea, CardActions, IconButton, Rating } from '@mui/material';
 import ItemCount from '../ItemCount/ItemCount';
 import { useState } from 'react';
 
-export default function ActionAreaCard({ product, cardProps }) {
+export default function ActionAreaCard({ product, cardProps}) {
   //const cardProps={maxWidth:345,height:200,showRating:true,showPrice:true,showDescription:true}
   const [productItems, setProductItems] = useState(0);
   

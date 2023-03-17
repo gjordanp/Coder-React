@@ -9,10 +9,17 @@
   background-color: #f3f3f3;
   font-size: 2rem;
   font-weight: 600;
-  color: black;
   min-width: 100vw;
   min-height: 100vh;
-  padding-top: 100px;
+  padding-top: 50px;
+  padding-left: 15vw;
+  padding-right: 15vw;
   overflow: hidden;
 }
 
+@media (max-width: 600px) {
+  .container {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+}

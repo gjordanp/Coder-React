@@ -6,11 +6,9 @@ import styles from './cartwidget.module.css'
 const CartWidget = (props) => {
   return (
     <div className={styles.displayflex}>
-        <ShoppingCartOutlinedIcon size={30}/>
-        <div className={styles.container}>{props.notifications}</div>
+        <ShoppingCartOutlinedIcon fontSize='medium'/>
+        {props.notifications > 0 && <div className={styles.container}>{props.notifications}</div>}
     </div>
-    
   )
 }
-
 export default CartWidget

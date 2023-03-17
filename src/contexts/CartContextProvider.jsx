@@ -18,12 +18,16 @@ export const CartContextProvider = ({ children }) => {
         return cartList.some((obj) => obj.product.id === id)
     }
 
+    const cartCount = () => {	//implementa la funcionalidad para contar la cantidad de productos en el carrito
+        return cartList.reduce((acc, obj) => acc + obj.quantity, 0)
+    }
+
     const resetQty = (id, qty) => {	//implementa la funcionalidad para resetear la cantidad de un producto en el carrito
         setCartList(cartList.map((obj) => obj.product.id === id ? { "product": obj.product, "quantity": qty } : obj));
     }
 
     return (
-        <CartContext.Provider value={{ cartList, addToCart, clear, removeItem, isInCart, resetQty }}>
+        <CartContext.Provider value={{ cartList, addToCart, clear, removeItem, isInCart, resetQty, cartCount }}>
             {children}
         </CartContext.Provider>
     )

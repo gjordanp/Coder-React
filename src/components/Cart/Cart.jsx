@@ -33,15 +33,15 @@ function Cart() {
                                 <img src={item.product.image} alt="img" width={70} style={{ objectFit: "contain" , margin: "0px 0px 0px 10px"}} />
                                 {/* <h3>{item.product.title}</h3> */}
                                 <div style={{ width: "70%" }}>
-                                    <p>{item.product.title}</p>
-                                    <p>{"$" + (item.product.price).toFixed(2)+"/un"}</p>
+                                    <div>{item.product.title}</div>
+                                    <div style={{ marginTop: "10px" }}><strong>{"$" + (item.product.price).toFixed(2)+"/un"}</strong></div>
                                 </div>
                                 <div style={{ display: "flex", flexDirection: "column", alignItems: "end", padding: "8px", justifyItems: "center"}}>
                                 <IconButton aria-label="delete" onClick={() => removeItem(item.product.id)} sx={{position: "relative"}}>
                                     <HighlightOffRoundedIcon sx={{ color: red[500] }} fontSize='medium'/>
                                 </IconButton>
                                 <ItemCount product={item.product} stock={5} initial={item.quantity} hideAddToCart={true} onChange={onChange} />
-                                <div style={{ fontSize: "1.2rem", padding: 8}} ><strong>{"$" + (item.product.price * item.quantity).toFixed(2)}</strong></div>
+                                <div style={{ fontSize: "1.2rem", padding: 10}} ><strong>{"$" + (item.product.price * item.quantity).toFixed(2)}</strong></div>
                                 </div>
                             </div>)}
                 </div>

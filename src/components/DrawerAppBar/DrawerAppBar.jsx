@@ -21,12 +21,13 @@ import flykiteLogo from '../../assets/flykite-logo.svg';
 import flykiteLogoBlack from '../../assets/flykite-logo-bl.svg';
 import styles from './DrawerAppBar.module.css';
 import { Link, NavLink } from 'react-router-dom';
+import { useState } from 'react';
+import { useContext } from 'react';
+import { CartContext } from '../../contexts/CartContextProvider';
+import { useEffect } from 'react';
 
 const drawerWidth = 240;
-//const navItems = ['Home', 'About', 'Contact'];
-//const navItems = ["Velas", "Barras", "Tablas", "Accesorios", <CartWidget notifications="3" />];
 const navItems = ["men's clothing", "jewelery", "electronics", "women's clothing"];
-
 const darkTheme = createTheme({
   palette: {
     primary: {
@@ -51,6 +52,9 @@ let activeStyle = {
 function DrawerAppBar(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const { cartList, cartCount } = useContext(CartContext);
+  const [notifications, setNotifications] = useState(0);
+  useEffect(() => { setNotifications(cartCount) }, [cartList])
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -77,7 +81,7 @@ function DrawerAppBar(props) {
           <NavLink to={"/Coder-React/cart"} key={"cart"} style={{ textDecoration: "none", color: "inherit" }}>
             <ListItem key={"cart"} disablePadding>
               <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={<CartWidget notifications="3"/>} />
+              <ListItemText primary={<CartWidget notifications={notifications}/>} />
               </ListItemButton>
             </ListItem>
           </NavLink>
@@ -103,7 +107,7 @@ function DrawerAppBar(props) {
               <MenuIcon />
             </IconButton>
             <Tooltip title="Home" >
-              <Link to={`/Coder-React`} style={{ textDecoration: "none", color: "inherit" }}>
+              <Link to={`/Coder-React/`} style={{ textDecoration: "none", color: "inherit" }}>
                 <Box sx={{ display: { xs: 'flex', sm: 'flex' }, margin: 'auto' }}>
                   <img src={flykiteLogo} width="40px" alt="" />
                   <h3>FlyKite</h3>
@@ -126,7 +130,7 @@ function DrawerAppBar(props) {
               ))}
                  <NavLink to={`/Coder-React/cart`} key={"cart"}>
                   <Button key={"cart"} sx={{ color: '#fff' }}>
-                    {<CartWidget notifications="3" />}
+                    {<CartWidget notifications={notifications} />}
                   </Button>
                 </NavLink>
             </Box>

@@ -14,12 +14,13 @@ import Cart from './components/Cart/Cart'
 
 
 function App() {
-
+  const [loading, setLoading] = useState(true)
   const [products, setProducts] = useState([])
   const [cartProducts, setCartProducts] = useState([])
   const getProducts = async () => {
-    const response = await axios.get('https://fakestoreapi.com/products')
-    setProducts(response.data)
+    const response = await axios.get('https://fakestoreapi.com/products');
+    setProducts(response.data);
+    setLoading(false);
   };
   const categories = products.map((product) => product.category);
   useEffect(() => {
@@ -40,7 +41,7 @@ function App() {
         <>
         <NavBar categories={categories} />
         <Routes>
-          <Route path='/Coder-React' element={<ItemListContainer products={products} />} />
+          <Route path='/Coder-React' element={<ItemListContainer products={products} loading={loading} />} />
           {/* <Route path='/products' element={<ProductList products={products}/>}/> */}
           <Route path='/Coder-React/categories/:cat' element={<ItemListContainer products={products} />} />
           <Route path='/Coder-React/item/:id' element={<ItemDetailContainer products={products} />} />

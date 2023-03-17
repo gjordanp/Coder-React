@@ -13,10 +13,7 @@ const categories = ["Velas", "Barras", "Tablas", "Accesorios"];
 
 const NavBar = () => {
     return (
-        <>
-            <DrawerAppBar />
-        </>
-
+        <DrawerAppBar />
     )
 
 }
