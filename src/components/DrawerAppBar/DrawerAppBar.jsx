@@ -19,7 +19,7 @@ import { createTheme, Tooltip } from '@mui/material';
 import { ThemeProvider } from '@emotion/react';
 import flykiteLogo from '../../assets/flykite-logo.svg';
 import flykiteLogoBlack from '../../assets/flykite-logo-bl.svg';
-import styles from './DrawerAppBar.module.css';
+import styles from './drawerappbar.module.css';
 import { Link, NavLink } from 'react-router-dom';
 import { useState } from 'react';
 import { useContext } from 'react';
