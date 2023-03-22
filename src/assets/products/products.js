@@ -14,7 +14,7 @@ const products = [
             "WAVE": 0.3,
             "ENTRY": 0.8
         },
-        "price": 1000,
+        "price": 1929,
         "rating": {
             "rate": 0.7,
             "count": 120
@@ -35,7 +35,7 @@ const products = [
             "WAVE": 0.4,
             "ENTRY": 0.8
         },
-        "price": 1000,
+        "price": 3499,
         "rating": {
             "rate": 0.7,
             "count": 120
@@ -56,7 +56,7 @@ const products = [
             "WAVE": 0.5,
             "ENTRY": 1.0
         },
-        "price": 1000,
+        "price": 1390,
         "rating": {
             "rate": 0.7,
             "count": 120
@@ -77,7 +77,7 @@ const products = [
             "WAVE": 0.7,
             "ENTRY": 0.8
         },
-        "price": 1000,
+        "price": 1800,
         "rating": {
             "rate": 0.7,
             "count": 120
@@ -98,7 +98,7 @@ const products = [
             "WAVE": 0.7,
             "ENTRY": 1.0
         },
-        "price": 1000,
+        "price": 2490,
         "rating": {
             "rate": 0.7,
             "count": 120
@@ -119,7 +119,7 @@ const products = [
             "WAVE": 0.9,
             "ENTRY": 1.0
         },
-        "price": 1000,
+        "price": 1390,
         "rating": {
             "rate": 0.7,
             "count": 120
@@ -140,7 +140,7 @@ const products = [
             "WAVE": 1.0,
             "ENTRY": 0.7
         },
-        "price": 1000,
+        "price": 1640,
         "rating": {
             "rate": 0.7,
             "count": 120
@@ -161,7 +161,7 @@ const products = [
             "WAVE": 0.7,
             "ENTRY": 1.0
         },
-        "price": 1000,
+        "price": 2590,
         "rating": {
             "rate": 0.7,
             "count": 120
@@ -182,7 +182,7 @@ const products = [
             "WAVE": 0.4,
             "ENTRY": 0.6
         },
-        "price": 1000,
+        "price": 1950,
         "rating": {
             "rate": 0.7,
             "count": 120
@@ -203,7 +203,7 @@ const products = [
             "WAVE": 0.4,
             "ENTRY": 0.6
         },
-        "price": 1000,
+        "price": 1770,
         "rating": {
             "rate": 0.7,
             "count": 120
@@ -224,7 +224,7 @@ const products = [
             "WAVE": 0.7,
             "ENTRY": 0.4
         },
-        "price": 1000,
+        "price": 1390,
         "rating": {
             "rate": 0.7,
             "count": 120
@@ -245,7 +245,7 @@ const products = [
             "WAVE": 0.7,
             "ENTRY": 0.3
         },
-        "price": 1000,
+        "price": 1800,
         "rating": {
             "rate": 0.7,
             "count": 120
@@ -263,7 +263,7 @@ const products = [
             "FREESTYLE HOOKED": 0.7,
             "FREERIDE": 0.8,
         },
-        "price": 1000,
+        "price": 769,
         "rating": {
             "rate": 4.0,
             "count": 120
@@ -281,7 +281,7 @@ const products = [
             "FREESTYLE HOOKED": 0.8,
             "FREERIDE": 0.9,
         },
-        "price": 1000,
+        "price": 1199,
         "rating": {
             "rate": 4.5,
             "count": 120
@@ -299,7 +299,7 @@ const products = [
             "FREESTYLE HOOKED": 0.5,
             "FREERIDE": 0.9,
         },
-        "price": 1000,
+        "price": 749,
         "rating": {
             "rate": 3.5,
             "count": 120
@@ -317,7 +317,7 @@ const products = [
             "FREESTYLE HOOKED": 0.6,
             "FREERIDE": 1.0,
         },
-        "price": 1000,
+        "price": 1199,
         "rating": {
             "rate": 4.0,
             "count": 120
@@ -335,7 +335,7 @@ const products = [
             "FREESTYLE HOOKED": 0.5,
             "FREERIDE": 0.9,
         },
-        "price": 1000,
+        "price": 749,
         "rating": {
             "rate": 3.5,
             "count": 120
@@ -353,7 +353,7 @@ const products = [
             "FREESTYLE HOOKED": 0.6,
             "FREERIDE": 1.0,
         },
-        "price": 1000,
+        "price": 1199,
         "rating": {
             "rate": 4.0,
             "count": 120
@@ -371,7 +371,7 @@ const products = [
             "FREESTYLE HOOKED": 0.9,
             "FREERIDE": 0.6,
         },
-        "price": 1000,
+        "price": 849,
         "rating": {
             "rate": 3.8,
             "count": 120
@@ -389,7 +389,7 @@ const products = [
             "FREESTYLE HOOKED": 1.0,
             "FREERIDE": 0.6,
         },
-        "price": 1000,
+        "price": 1199,
         "rating": {
             "rate": 4.2,
             "count": 120
@@ -407,7 +407,7 @@ const products = [
             "FREESTYLE HOOKED": 0.5,
             "FREERIDE": 0.8,
         },
-        "price": 1000,
+        "price": 1199,
         "rating": {
             "rate": 3.2,
             "count": 120
@@ -425,7 +425,7 @@ const products = [
             "FREESTYLE HOOKED": 0.3,
             "FREERIDE": 0.9,
         },
-        "price": 1000,
+        "price": 749,
         "rating": {
             "rate": 2.5,
             "count": 120
@@ -443,7 +443,7 @@ const products = [
             "FREESTYLE HOOKED": 0.3,
             "FREERIDE": 1.0,
         },
-        "price": 1000,
+        "price": 849,
         "rating": {
             "rate": 2.7,
             "count": 120
@@ -461,7 +461,7 @@ const products = [
             "FREESTYLE HOOKED": 0.3,
             "FREERIDE": 0.7,
         },
-        "price": 1000,
+        "price": 549,
         "rating": {
             "rate": 2.3,
             "count": 120
@@ -475,7 +475,7 @@ const products = [
         "image": "https://cdn.boards-and-more.com/system/product_picture_gallery_pictures/files/62c5/6136/cc9d/9200/d167/125f/xlarge/TB23_P1.png?1657102616",
         "video": "https://youtu.be/Azi-O3DrCOI",
         "characteristics": {},
-        "price": 1000,
+        "price": 589,
         "rating": {
             "rate": 4.0,
             "count": 120
@@ -489,7 +489,187 @@ const products = [
         "image": "https://cdn.boards-and-more.com/system/product_picture_gallery_pictures/files/6321/db29/438a/5100/e070/07e7/xlarge/CB23_-_SMALL_-_P1.png?1663163155",
         "video": "https://youtu.be/uN3Bg5j9PPU",
         "characteristics": {},
-        "price": 1000,
+        "price": 589,
+        "rating": {
+            "rate": 4.5,
+            "count": 120
+        }
+    },
+    {
+        "title": "SPIRIT GT",
+        "category": "foils",
+        "subtitle": "",
+        "description": "The Spirit 3.0 series is a solid aluminium mast offering loads of control and stability at incredible speed.",
+        "image": "https://cdn.boards-and-more.com/system/product_picture_gallery_pictures/files/6138/cd82/b137/1800/ae7d/1dc1/xlarge/Spirit_ALU_22_-_GT700.png?1631112564",
+        "video": "https://youtu.be/vSZfBqdBfu8",
+        "characteristics": {
+            "SPEED": 0.8,
+            "LIFT FACTOR": 0.5,
+            "MANOEUVRABILITY": 0.8,
+            "SURF FEEL": 0.2,
+            "EASY OF USE": 0.3,
+        },
+        "price": 1199,
+        "rating": {
+            "rate": 4.0,
+            "count": 120
+        }
+    },
+    {
+        "title": "SPIRIT SLS GT",
+        "category": "foils",
+        "subtitle": "",
+        "description": "The Spirit SLS is a true inspiration in the SLS (strong light superior) segment, offering an ultra light carbon mast with a glued top plate and a carbon fuselage form fit connection system. A guarantee for speed and control.",
+        "image": "https://cdn.boards-and-more.com/system/product_picture_gallery_pictures/files/6138/cedc/b137/1800/ae7d/1dc8/xlarge/Spirit_Carbon_22_-_GT700.png?1631112910",
+        "video": "https://youtu.be/JaQ49hrA32I",
+        "characteristics": {
+            "SPEED": 0.9,
+            "LIFT FACTOR": 0.6,
+            "MANOEUVRABILITY": 0.9,
+            "SURF FEEL": 0.3,
+            "EASY OF USE": 0.4,
+        },
+        "price": 1399,
+        "rating": {
+            "rate": 4.5,
+            "count": 120
+        }
+    },
+    {
+        "title": "SPIRIT CARVE",
+        "category": "foils",
+        "subtitle": "",
+        "description": "The Spirit 3.0 series is a solid aluminium mast offering loads of control and stability at incredible speed.",
+        "image": "https://cdn.boards-and-more.com/system/product_picture_gallery_pictures/files/6138/cded/b137/1800/b67d/1d58/xlarge/Spirit_ALU_22_-_CARVE700.png?1631112671",
+        "video": "https://youtu.be/vSZfBqdBfu8",
+        "characteristics": {
+            "SPEED": 0.5,
+            "LIFT FACTOR": 0.8,
+            "MANOEUVRABILITY": 0.5,
+            "SURF FEEL": 0.8,
+            "EASY OF USE": 0.8,
+        },
+        "price": 1199,
+        "rating": {
+            "rate": 4.0,
+            "count": 120
+        }
+    },
+    {
+        "title": "SPIRIT SLS CARVE",
+        "category": "foils",
+        "subtitle": "",
+        "description": "The Spirit SLS is a true inspiration in the SLS (strong light superior) segment, offering an ultra light carbon mast with a glued top plate and a carbon fuselage form fit connection system. A guarantee for speed and control.",
+        "image": "https://cdn.boards-and-more.com/system/product_picture_gallery_pictures/files/6138/ce9d/b137/1800/ae7d/1dc7/xlarge/Spirit_Carbon_22_-_CARVE950.png?1631112847",
+        "video": "https://youtu.be/JaQ49hrA32I",
+        "characteristics": {
+            "SPEED": 0.6,
+            "LIFT FACTOR": 0.9,
+            "MANOEUVRABILITY": 0.6,
+            "SURF FEEL": 0.9,
+            "EASY OF USE": 0.9,
+        },
+        "price": 1399,
+        "rating": {
+            "rate": 4.5,
+            "count": 120
+        }
+    },
+    {
+        "title": "SPIRIT SURF",
+        "category": "foils",
+        "subtitle": "",
+        "description": "The Spirit 3.0 series is a solid aluminium mast offering loads of control and stability at incredible speed.",
+        "image": "https://cdn.boards-and-more.com/system/product_picture_gallery_pictures/files/6138/cdcd/b137/1800/ae7d/1dc2/xlarge/Spirit_ALU_22_-_SURF1250.png?1631112639",
+        "video": "https://youtu.be/vSZfBqdBfu8",
+        "characteristics": {
+            "SPEED": 0.3,
+            "LIFT FACTOR": 0.9,
+            "MANOEUVRABILITY": 0.4,
+            "SURF FEEL": 0.9,
+            "EASY OF USE": 0.6,
+        },
+        "price": 1199,
+        "rating": {
+            "rate": 4.0,
+            "count": 120
+        }
+    },
+    {
+        "title": "SPIRIT SLS SURF",
+        "category": "foils",
+        "subtitle": "",
+        "description": "The Spirit SLS is a true inspiration in the SLS (strong light superior) segment, offering an ultra light carbon mast with a glued top plate and a carbon fuselage form fit connection system. A guarantee for speed and control.",
+        "image": "https://cdn.boards-and-more.com/system/product_picture_gallery_pictures/files/6138/cf1b/b137/1800/ae7d/1dc9/xlarge/Spirit_Carbon_22_-SURF1250.png?1631112973",
+        "video": "https://youtu.be/JaQ49hrA32I",
+        "characteristics": {
+            "SPEED": 0.4,
+            "LIFT FACTOR": 1.0,
+            "MANOEUVRABILITY": 0.5,
+            "SURF FEEL": 1.0,
+            "EASY OF USE": 0.7,
+        },
+        "price": 1399,
+        "rating": {
+            "rate": 4.5,
+            "count": 120
+        }
+    },
+    {
+        "title": "SPIRIT FREERIDE",
+        "category": "foils",
+        "subtitle": "",
+        "description": "The Spirit 3.0 series is a solid aluminium mast offering loads of control and stability at incredible speed.",
+        "image": "https://cdn.boards-and-more.com/system/product_picture_gallery_pictures/files/6138/cde1/b137/1800/a87d/20a2/xlarge/Spirit_ALU_22_-_FREERIDE.png?1631112658",
+        "video": "https://youtu.be/vSZfBqdBfu8",
+        "characteristics": {
+            "SPEED": 0.4,
+            "LIFT FACTOR": 0.6,
+            "MANOEUVRABILITY": 0.5,
+            "SURF FEEL": 0.6,
+            "EASY OF USE": 1.0,
+        },
+        "price": 1199,
+        "rating": {
+            "rate": 4.5,
+            "count": 120
+        }
+    },
+    {
+        "title": "DAYTONA 105",
+        "category": "foils",
+        "subtitle": "HIGH PERFORMANCE",
+        "description": "The Daytona is our freerace foil. Built like a full on race foil but tuned to make it more userfriendly for the weekend warriors.",
+        "image": "https://cdn.boards-and-more.com/system/product_picture_gallery_pictures/files/5d8c/b4b4/a830/3e00/ed00/01e7/xlarge/DAYTONA21_-_PP1.png?1569502373",
+        "video": "",
+        "characteristics": {
+            "SPEED": 0.9,
+            "LIFT FACTOR": 0.3,
+            "MANOEUVRABILITY": 0.9,
+            "SURF FEEL": 0.1,
+            "EASY OF USE": 0.2,
+        },
+        "price": 2999,
+        "rating": {
+            "rate": 4.0,
+            "count": 120
+        }
+    },
+    {
+        "title": "DAYTONA DOS D/LAB",
+        "category": "foils",
+        "subtitle": "HIGH PERFORMANCE/RACE",
+        "description": "The Daytona DOS D/LAB is a full carbon high performance foil with the potential to become a design icon!",
+        "image": "https://cdn.boards-and-more.com/system/product_picture_gallery_pictures/files/5fad/38f0/9f49/bf00/a800/0233/xlarge/44900-3509_DOS21_-_PP1.png?1605187811",
+        "video": "https://youtu.be/ASDQUlD8otE",
+        "characteristics": {
+            "SPEED": 1.0,
+            "LIFT FACTOR": 0.3,
+            "MANOEUVRABILITY": 1.0,
+            "SURF FEEL": 0.1,
+            "EASY OF USE": 0.1,
+        },
+        "price": 3499,
         "rating": {
             "rate": 4.5,
             "count": 120

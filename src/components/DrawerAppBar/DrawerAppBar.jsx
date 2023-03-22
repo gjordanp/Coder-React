@@ -61,7 +61,7 @@ function DrawerAppBar(props) {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center'}}>
 
       <Typography className={styles.logocontainer} variant="h4" sx={{ my: 1 }}>
         <img src={flykiteLogoBlack} width="40px" alt="" style={{opacity:0.85}}/> 
@@ -92,7 +92,7 @@ function DrawerAppBar(props) {
   const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={{ display: 'flex'}}>
       <CssBaseline />
       <ThemeProvider theme={darkTheme}>
         <AppBar component="nav" color="primary">
@@ -107,8 +107,8 @@ function DrawerAppBar(props) {
               <MenuIcon />
             </IconButton>
             <Tooltip title="Home" >
-              <Link to={`/Coder-React/`} style={{ textDecoration: "none", color: "inherit" }}>
-                <Box sx={{ display: { xs: 'flex', sm: 'flex' }, margin: 'auto' }}>
+              <Link to={`/Coder-React/`} style={{ textDecoration: "none", color: "inherit", margin:'auto auto'}}>
+                <Box sx={{ display: { xs: 'flex', sm: 'flex' }}}>
                   <img src={flykiteLogo} width="40px" alt="" />
                   <h3>FlyKite</h3>
                 </Box>

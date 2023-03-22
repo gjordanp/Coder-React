@@ -7,19 +7,19 @@ import { CardActionArea, CardActions, IconButton, Rating } from '@mui/material';
 import ItemCount from '../ItemCount/ItemCount';
 import { useState } from 'react';
 
-export default function ActionAreaCard({ product, cardProps}) {
+export default function ActionAreaCard({ product, cardProps }) {
   //const cardProps={maxWidth:345,height:200,showRating:true,showPrice:true,showDescription:true}
   const [productItems, setProductItems] = useState(0);
-  
+
   return (
-    <Card sx={{ maxWidth: cardProps.maxWidth, width: cardProps.maxWidth, borderRadius: "20px", alignSelf: "top"}}>
+    <Card sx={{ maxWidth: cardProps.maxWidth, width: cardProps.maxWidth, borderRadius: "20px", alignSelf: "top" }}>
       <CardActionArea>
         <CardMedia
           component="img"
           height={cardProps.height}
           image={product.image}
           alt={product.title}
-          sx={{ objectFit: "contain", width: cardProps.height, marginLeft: "auto", marginRight: "auto" , marginTop: "15px"}} />
+          sx={{ objectFit: "contain", width: cardProps.height, marginLeft: "auto", marginRight: "auto", marginTop: "15px" }} />
         <CardContent>
           <Typography gutterBottom variant="h6" component="div">
             {product.title}
@@ -34,7 +34,10 @@ export default function ActionAreaCard({ product, cardProps}) {
           }
           {cardProps.showPrice &&
             <Typography gutterBottom variant="h6" component="div">
-              {"$" + product.price}
+              <Typography variant="h6" component="span" fontSize='1rem'>
+                {"US$"}
+              </Typography>
+              {product.price}
             </Typography>
           }
           {cardProps.showRating && <Rating name="read-only" value={product.rating.rate} readOnly />}
@@ -42,7 +45,7 @@ export default function ActionAreaCard({ product, cardProps}) {
       </CardActionArea>
       {cardProps.showActions &&
         <CardActions>
-          <ItemCount product={product} stock={5} initial={1} hideAddToCart={false}/>
+          <ItemCount product={product} stock={5} initial={1} hideAddToCart={false} />
         </CardActions>}
     </Card>
   );

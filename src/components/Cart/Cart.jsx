@@ -46,7 +46,7 @@ function Cart() {
                                     <div style={{ fontSize: "1.2rem", padding: 10 }} >
                                         <strong>
                                             <ReactTextTransition
-                                                children={"$" + (item.product.price * item.quantity).toFixed(2)}
+                                                children={"US$ " + (item.product.price * item.quantity).toFixed(2)}
                                                 springConfig={{ stiffness: 50, damping: 20 }}
                                                 inline
                                                 overflow={false}
@@ -58,9 +58,9 @@ function Cart() {
                             </div>)}
                 </div>
                 {/* <div className={styles.cartTotalContainer}>Subtotal: {"$" + cartList.reduce((acc, item) => acc + item.product.price * item.quantity, 0).toFixed(2)} </div> */}
-                <div className={styles.cartTotalContainer}>Subtotal:
+                <div className={styles.cartTotalContainer}>{"Subtotal: "} 
                     <ReactTextTransition
-                        children={"$" + cartList.reduce((acc, item) => acc + item.product.price * item.quantity, 0).toFixed(2)}
+                        children={"US$ " + cartList.reduce((acc, item) => acc + item.product.price * item.quantity, 0).toFixed(2)}
                         springConfig={{ stiffness: 50, damping: 20 }}
                         inline
                         overflow={false}

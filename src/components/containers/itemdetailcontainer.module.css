@@ -11,10 +11,12 @@
   font-weight: 600;
   min-width: 100vw;
   min-height: 100vh;
-  padding-top: 50px;
+  padding-top: 100px;
+  padding-bottom: 60px;
   padding-left: 15vw;
   padding-right: 15vw;
   overflow: hidden;
+  margin:0
 }
 
 @media (max-width: 600px) {
