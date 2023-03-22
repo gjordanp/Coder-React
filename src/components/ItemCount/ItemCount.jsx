@@ -26,14 +26,15 @@ function ItemCount({ product, stock, initial, hideAddToCart, onChange }) {
 
     return (
         <div className={styles.container}>
-            <IconButton color="" aria-label="add items" onClick={handleClickAdd}>
-                <AddCircleOutlineRoundedIcon fontSize='medium' />
+
+            <IconButton color="" aria-label="remove items" onClick={handleClickRemove}>
+                <RemoveCircleOutlineRoundedIcon fontSize='medium' />
             </IconButton>
             <Typography variant="h6" component="div">
                 {count}
             </Typography>
-            <IconButton color="" aria-label="remove items" onClick={handleClickRemove}>
-                <RemoveCircleOutlineRoundedIcon fontSize='medium' />
+            <IconButton color="" aria-label="add items" onClick={handleClickAdd}>
+                <AddCircleOutlineRoundedIcon fontSize='medium' />
             </IconButton>
             {!hideAddToCart &&
                 <Button size="medium" variant="outlined" onClick={() => { addToCart(product, count); navigate('/Coder-React/cart'); console.log("click") }}>Agregar al Carrito</Button>

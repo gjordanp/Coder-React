@@ -27,7 +27,7 @@ import { CartContext } from '../../contexts/CartContextProvider';
 import { useEffect } from 'react';
 
 const drawerWidth = 240;
-const navItems = ["men's clothing", "jewelery", "electronics", "women's clothing"];
+const navItems = ["kites", "boards", "foils", "bars"];
 const darkTheme = createTheme({
   palette: {
     primary: {

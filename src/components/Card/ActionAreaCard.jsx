@@ -24,6 +24,9 @@ export default function ActionAreaCard({ product, cardProps}) {
           <Typography gutterBottom variant="h6" component="div">
             {product.title}
           </Typography>
+          <Typography gutterBottom variant="h7" component="div">
+            {product.subtitle}
+          </Typography>
           {cardProps.showDescription &&
             <Typography variant="body2" color="text.secondary">
               {product.description}

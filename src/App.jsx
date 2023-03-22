@@ -11,17 +11,26 @@ import { Routes, Route } from 'react-router-dom'
 import ItemDetailContainer from './components/containers/ItemDetailContainer'
 import { CartContextProvider } from './contexts/CartContextProvider'
 import Cart from './components/Cart/Cart'
+import { collection, getDocs } from 'firebase/firestore'
+import db from '../db/firebase-config'
 
 
 function App() {
   const [loading, setLoading] = useState(true)
   const [products, setProducts] = useState([])
-  const [cartProducts, setCartProducts] = useState([])
+  const itemsCollectionRef = collection(db, 'items')
+  // const getProducts = async () => {
+  //   const response = await axios.get('https://fakestoreapi.com/products');
+  //   setProducts(response.data);
+  //   setLoading(false);
+  // };
   const getProducts = async () => {
-    const response = await axios.get('https://fakestoreapi.com/products');
-    setProducts(response.data);
+    const itemsCollection = await getDocs(itemsCollectionRef)
+    console.log(itemsCollection)
+    const items = itemsCollection.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
+    setProducts(items)
     setLoading(false);
-  };
+  }
   const categories = products.map((product) => product.category);
   useEffect(() => {
     getProducts();
