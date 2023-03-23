@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea, CardActions, IconButton, Rating } from '@mui/material';
 import ItemCount from '../ItemCount/ItemCount';
 import { useState } from 'react';
-import OnHoverCard from './Card';
+import OnHoverCard from './OnHoverCard';
 
 
 export default function ActionAreaCard({ product, cardProps }) {
