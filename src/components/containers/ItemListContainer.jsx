@@ -5,7 +5,7 @@ import { Link, useParams } from 'react-router-dom'
 
 
 const ItemListContainer = ({ products, loading }) => {
-  const cardProps={maxWidth:345,height:200,showRating:true,showPrice:true,showDescription:false,showActions: false }
+  const cardProps={maxWidth:345,height:200,showRating:true,showPrice:true,showDescription:false,showActions: false, canHover: true  }
   const { cat } = useParams();
   if (cat) { products = products.filter((product) => product.category === cat) }
   const fakeproducts=[1,2,3,4,5,6,7,8,9,10,11,12,13];

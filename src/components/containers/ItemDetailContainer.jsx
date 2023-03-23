@@ -7,7 +7,7 @@ function ItemDetailContainer({ products, loading }) {
 
     const { id } = useParams();
     const product = products.find(product => product.id == id)
-    const cardProps = { maxWidth: "100%", height: 300, showRating: true, showPrice: true, showDescription: true, showActions: true }
+    const cardProps = { maxWidth: "100%", height: 300, showRating: true, showPrice: true, showDescription: true, showActions: true, canHover: false }
     const videoUrl = "https://www.youtube.com/embed/" + product.video.split("/").slice(-1);
     return (
         <div className={styles.container}>

@@ -6,13 +6,17 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea, CardActions, IconButton, Rating } from '@mui/material';
 import ItemCount from '../ItemCount/ItemCount';
 import { useState } from 'react';
+import OnHoverCard from './OnHoverCard';
+
 
 export default function ActionAreaCard({ product, cardProps }) {
   //const cardProps={maxWidth:345,height:200,showRating:true,showPrice:true,showDescription:true}
   const [productItems, setProductItems] = useState(0);
+  const [hover, setHover] = useState(false);	
 
   return (
-    <Card sx={{ maxWidth: cardProps.maxWidth, width: cardProps.maxWidth, borderRadius: "20px", alignSelf: "top" }}>
+    <Card sx={{ maxWidth: cardProps.maxWidth, width: cardProps.maxWidth, borderRadius: "20px", alignSelf: "top", position:"relative" }} onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)}> 
+      <OnHoverCard product={product} hover={hover} canHover={cardProps.canHover}/>
       <CardActionArea>
         <CardMedia
           component="img"
