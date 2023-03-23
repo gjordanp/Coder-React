@@ -1,16 +1,11 @@
 import { Button, IconButton, Typography } from '@mui/material'
 import { useContext, useEffect, useState } from 'react'
-import AddCircleIcon from '@mui/icons-material/AddCircle';
-import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
-import AddBoxIcon from '@mui/icons-material/AddBox';
-import IndeterminateCheckBoxIcon from '@mui/icons-material/IndeterminateCheckBox';
 import AddCircleOutlineRoundedIcon from '@mui/icons-material/AddCircleOutlineRounded';
 import RemoveCircleOutlineRoundedIcon from '@mui/icons-material/RemoveCircleOutlineRounded';
-import HighlightOffRoundedIcon from '@mui/icons-material/HighlightOffRounded';
 import styles from './itemcount.module.css';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { CartContext } from '../../contexts/CartContextProvider';
-import { Navigate } from 'react-router-dom';
+
 
 
 function ItemCount({ product, stock, initial, hideAddToCart, onChange }) {

@@ -1,8 +1,5 @@
-import { StopCircleSharp } from '@mui/icons-material'
 import { LinearProgress, Typography } from '@mui/material'
-import React from 'react'
 import styles from './onhovercard.module.css'
-import { red } from '@mui/material/colors'
 import Fade from '@mui/material/Fade';
 
 
@@ -17,7 +14,7 @@ function OnHoverCard({ product, hover, canHover }) {
                             <span style={{ color: "#fafafa", fontSize: "0.8rem", fontWeight: 800 }}>
                                 {key}
                             </span>
-                            <LinearProgress variant="determinate" value={value * 100} sx={{ height: 6, borderRadius: 6, backgroundColor: "gray", color: { red } }} />
+                            <LinearProgress variant="determinate" value={value * 100} sx={{ height: 6, borderRadius: 6, backgroundColor: "gray" }} />
                         </div>
                     )
                 })}
