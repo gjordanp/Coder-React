@@ -46,11 +46,11 @@ function App() {
         <>
         <NavBar categories={categories} />
         <Routes>
-          <Route path='/Coder-React' element={<ItemListContainer products={products} loading={loading} />} />
+          <Route path='/' element={<ItemListContainer products={products} loading={loading} />} />
           {/* <Route path='/products' element={<ProductList products={products}/>}/> */}
-          <Route path='/Coder-React/categories/:cat' element={<ItemListContainer products={products} />} />
-          <Route path='/Coder-React/item/:id' element={<ItemDetailContainer products={products} />} />
-          <Route path='/Coder-React/cart' element={<Cart/>} />
+          <Route path='/categories/:cat' element={<ItemListContainer products={products} />} />
+          <Route path='/item/:id' element={<ItemDetailContainer products={products} />} />
+          <Route path='/cart' element={<Cart/>} />
           <Route path='*' element={<h1>404 Not Found</h1>} />
         </Routes>
         </>

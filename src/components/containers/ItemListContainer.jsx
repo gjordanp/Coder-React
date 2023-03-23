@@ -17,7 +17,7 @@ const ItemListContainer = ({ products, loading }) => {
       ))
       :
       products.map((product =>
-        <Link to={`/Coder-React/item/${product.id}`} key={product.id}>
+        <Link to={`/item/${product.id}`} key={product.id}>
           <ActionAreaCard key={product.id} product={product} cardProps={cardProps}/>
         </Link>
       ))}

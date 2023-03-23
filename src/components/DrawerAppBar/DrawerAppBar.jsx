@@ -69,7 +69,7 @@ function DrawerAppBar(props) {
       <Divider />
       <List>
         {navItems.map((item) => (
-          <NavLink to={`/Coder-React/categories/${item}`} key={item} style={{ textDecoration: "none", color: "inherit" }}>
+          <NavLink to={`/categories/${item}`} key={item} style={{ textDecoration: "none", color: "inherit" }}>
             <ListItem key={item} disablePadding>
               <ListItemButton sx={{ textAlign: 'center' }}>
                 <ListItemText primary={item} />
@@ -77,7 +77,7 @@ function DrawerAppBar(props) {
             </ListItem>
           </NavLink>
         ))}
-          <NavLink to={"/Coder-React/cart"} key={"cart"} style={{ textDecoration: "none", color: "inherit" }}>
+          <NavLink to={"/cart"} key={"cart"} style={{ textDecoration: "none", color: "inherit" }}>
             <ListItem key={"cart"} disablePadding>
               <ListItemButton sx={{ textAlign: 'center' }}>
               <ListItemText primary={<CartWidget notifications={notifications}/>} />
@@ -106,7 +106,7 @@ function DrawerAppBar(props) {
               <MenuIcon />
             </IconButton>
             <Tooltip title="Home" >
-              <Link to={`/Coder-React/`} style={{ textDecoration: "none", color: "inherit", margin:'auto auto'}}>
+              <Link to={`/`} style={{ textDecoration: "none", color: "inherit", margin:'auto auto'}}>
                 <Box sx={{ display: { xs: 'flex', sm: 'flex' }}}>
                   <img src={flykiteLogo} width="40px" alt="" />
                   <h3>FlyKite</h3>
@@ -121,13 +121,13 @@ function DrawerAppBar(props) {
             </Typography>
             <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
               {navItems.map((item) => (
-                <NavLink to={`/Coder-React/categories/${item}`} key={item}>
+                <NavLink to={`/categories/${item}`} key={item}>
                   <Button key={item} sx={{ color: '#fff' }}>
                     {item}
                   </Button>
                 </NavLink>
               ))}
-                 <NavLink to={`/Coder-React/cart`} key={"cart"}>
+                 <NavLink to={`/cart`} key={"cart"}>
                   <Button key={"cart"} sx={{ color: '#fff' }}>
                     {<CartWidget notifications={notifications} />}
                   </Button>
