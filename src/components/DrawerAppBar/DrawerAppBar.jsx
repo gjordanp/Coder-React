@@ -62,7 +62,6 @@ function DrawerAppBar(props) {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center'}}>
-
       <Typography className={styles.logocontainer} variant="h4" sx={{ my: 1 }}>
         <img src={flykiteLogoBlack} width="40px" alt="" style={{opacity:0.85}}/> 
         <p>FlyKite</p>
@@ -95,7 +94,7 @@ function DrawerAppBar(props) {
     <Box sx={{ display: 'flex'}}>
       <CssBaseline />
       <ThemeProvider theme={darkTheme}>
-        <AppBar component="nav" color="primary">
+        <AppBar component="nav" color="primary" sx={{padding:{sm:"0px 8vw 0px 8vw",md:"0px 12vw 0px 12vw",lg:"0px 15vw 0px 15vw"}}}>
           <Toolbar>
             <IconButton
               color="inherit"
