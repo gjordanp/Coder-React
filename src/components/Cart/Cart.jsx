@@ -1,4 +1,4 @@
-import { Container, CssBaseline, IconButton } from '@mui/material'
+import { Button, Container, CssBaseline, IconButton, Stack, Tooltip } from '@mui/material'
 import React, { useContext, useEffect, useState } from 'react'
 import styles from './cart.module.css'
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -11,25 +11,42 @@ import { red } from '@mui/material/colors';
 import ReactTextTransition, { presets } from "react-text-transition";
 
 
+
 function Cart() {
-    const { cartList, addToCart, clear, removeItem } = useContext(CartContext);
-    const [cartListChange, setcartListChange] = useState(cartList);
-    const onChange = () => { setcartListChange(cartList) };
-    useEffect(() => { setcartListChange(cartList) }, [cartList])
+    const { cartFirebaseProducts, addToCart, clear, removeItem, fb_getCartItems } = useContext(CartContext);
+    const[noProductMessage, setnoProductMessage] = useState("No hay productos en el carrito");
+    //const [cartListChange, setcartListChange] = useState(cartList);
+    //const onChange = () => { setcartListChange(cartList) };
+
+    // useEffect(() => { 
+    //     fb_getCartItems(); 
+    //     setcartListChange(cartFirebaseProducts);
+    // }, [])
+
+    // useEffect(() => { 
+    //     setcartListChange(cartList);
+    // }, [cartList])
 
 
     return (
         <>
             <div className={styles.cartcontainer} >
-                <div className={styles.cartTitleContainer}>Carrito</div>
+                <div className={styles.cartTitleContainer}>
+                    Carrito
+                    <Tooltip title="Vaciar Carrito" >
+                        <IconButton aria-label="delete" onClick={() => clear()} sx={{ position: "relative" }}>
+                            <RemoveShoppingCartIcon sx={{ color: red[500] }} fontSize='medium' />
+                        </IconButton>
+                    </Tooltip>
+                </div>
                 <div className={styles.cartlistcontainer}>
-                    {cartList.length === 0 ?
+                    {cartFirebaseProducts.length === 0 ?
                         <div className={styles.emptyCart}>
                             <RemoveShoppingCartIcon fontSize='large' />
-                            <h3> No hay productos en el carrito </h3>
+                            <h3> {noProductMessage} </h3>
                         </div>
                         :
-                        cartListChange.map((item) =>
+                        cartFirebaseProducts.map((item) =>
                             <div className={styles.cartcard} key={item.product.id}>
                                 <img src={item.product.image} alt="img" width={70} style={{ objectFit: "contain", margin: "0px 0px 0px 10px" }} />
                                 {/* <h3>{item.product.title}</h3> */}
@@ -41,7 +58,7 @@ function Cart() {
                                     <IconButton aria-label="delete" onClick={() => removeItem(item.product.id)} sx={{ position: "relative" }}>
                                         <HighlightOffRoundedIcon sx={{ color: red[500] }} fontSize='medium' />
                                     </IconButton>
-                                    <ItemCount product={item.product} stock={5} initial={item.quantity} hideAddToCart={true} onChange={onChange} />
+                                    <ItemCount product={item.product} stock={5} initial={item.quantity} hideAddToCart={true} />
                                     {/* <div style={{ fontSize: "1.2rem", padding: 10}} ><strong>{"$" + (item.product.price * item.quantity).toFixed(2)}</strong></div> */}
                                     <div style={{ fontSize: "1.2rem", padding: 10 }} >
                                         <strong>
@@ -54,17 +71,22 @@ function Cart() {
                                         </strong>
                                     </div>
                                 </div>
-
-                            </div>)}
+                            </div>
+                        )}
                 </div>
                 {/* <div className={styles.cartTotalContainer}>Subtotal: {"$" + cartList.reduce((acc, item) => acc + item.product.price * item.quantity, 0).toFixed(2)} </div> */}
-                <div className={styles.cartTotalContainer}>{"Subtotal: "} 
-                    <ReactTextTransition
-                        children={"US$ " + cartList.reduce((acc, item) => acc + item.product.price * item.quantity, 0).toFixed(2)}
-                        springConfig={{ stiffness: 50, damping: 20 }}
-                        inline
-                        overflow={false}
-                    /> </div>
+                <div className={styles.cartTotalContainer}>
+                    <Button size="medium" variant="outlined" onClick={() => { clear(); setnoProductMessage("Muchas Gracias por tu Compra!")}}>Comprar</Button>
+                    <Stack direction="row" spacing={2} alignItems="center"> 
+                        <p>Subtotal:</p>
+                        <ReactTextTransition
+                            children={"US$ " + cartFirebaseProducts.reduce((acc, item) => acc + item.product.price * item.quantity, 0).toFixed(2)}
+                            springConfig={{ stiffness: 50, damping: 20 }}
+                            overflow={false}
+                        
+                        />
+                    </Stack>
+                </div>
             </div>
         </>
     )

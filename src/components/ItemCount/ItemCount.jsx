@@ -10,7 +10,7 @@ import { CartContext } from '../../contexts/CartContextProvider';
 
 function ItemCount({ product, stock, initial, hideAddToCart, onChange }) {
     const [count, setCount] = useState(initial);
-    const { cartList, addToCart, clear, removeItem, isInCart, resetQty } = useContext(CartContext);
+    const { addToCart, isInCart } = useContext(CartContext);
 
     useEffect(() => { isInCart(product.id) && addToCart(product,count) }, [count])
 

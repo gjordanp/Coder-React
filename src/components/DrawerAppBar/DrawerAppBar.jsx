@@ -14,7 +14,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import CartWidget from '../navbar/CartWidget';
+import CartWidget from '../CartWidget/CartWidget';
 import { createTheme, Tooltip } from '@mui/material';
 import { ThemeProvider } from '@emotion/react';
 import flykiteLogo from '../../assets/flykite-logo.svg';
@@ -52,9 +52,9 @@ let activeStyle = {
 function DrawerAppBar(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const { cartList, cartCount } = useContext(CartContext);
+  const { cartFirebaseProducts, cartCount } = useContext(CartContext);
   const [notifications, setNotifications] = useState(0);
-  useEffect(() => { setNotifications(cartCount) }, [cartList])
+  useEffect(() => { setNotifications(cartCount) }, [cartFirebaseProducts])
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
