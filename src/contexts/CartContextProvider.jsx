@@ -7,10 +7,12 @@ export const CartContext = createContext();
 export const CartContextProvider = ({ children }) => {
     //const [cartList, setCartList] = useState([]);
     const [cartFirebaseProducts, setCartFirebaseProducts] = useState([])
+    const [orders, setOrders] = useState([])
     const cartCollectionRef = collection(db, 'cart')
 
     useEffect(() => {
         fb_getCartItems();
+        fb_getOrders();
         console.log("CartItems")
     }, [])
     // useEffect(() => {
@@ -79,14 +81,14 @@ export const CartContextProvider = ({ children }) => {
     const fb_addOrder = async (order, id) => {
         const ref = doc(db, "orders", id);
         const docRef =await setDoc(ref, order);
-        return fb_getOrder(id)
+        fb_getOrders();
     }
 
     const fb_getOrders = async () => {
         const ordersCollectionRef = collection(db, 'orders')
         const ordersCollection = await getDocs(ordersCollectionRef)
         const orders = ordersCollection.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
-        return orders;
+        setOrders(orders);
     }
 
     const fb_getOrder = async (id) => {
@@ -96,7 +98,7 @@ export const CartContextProvider = ({ children }) => {
 
 
     return (
-        <CartContext.Provider value={{cartFirebaseProducts, addToCart, clear, removeItem, isInCart, resetQty, cartCount, fb_getCartItems, fb_addOrder, fb_getOrders}}>
+        <CartContext.Provider value={{cartFirebaseProducts, addToCart, clear, removeItem, isInCart, resetQty, cartCount, fb_getCartItems, fb_addOrder, fb_getOrders,orders}}>
             {children}
         </CartContext.Provider>
     )

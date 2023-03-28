@@ -15,7 +15,7 @@ import FormDialog from '../FormDialog/FormDialog';
 
 function Cart() {
     const { cartFirebaseProducts, addToCart, clear, removeItem, fb_getCartItems } = useContext(CartContext);
-    const[noProductMessage, setnoProductMessage] = useState("No hay productos en el carrito");
+    const [noProductMessage, setnoProductMessage] = useState("No hay productos en el carrito");
     //const [cartListChange, setcartListChange] = useState(cartList);
     //const onChange = () => { setcartListChange(cartList) };
 
@@ -76,20 +76,19 @@ function Cart() {
                         )}
                 </div>
                 {/* <div className={styles.cartTotalContainer}>Subtotal: {"$" + cartList.reduce((acc, item) => acc + item.product.price * item.quantity, 0).toFixed(2)} </div> */}
-                <div className={styles.cartTotalContainer}>
+                {cartFirebaseProducts.length > 0 && <div className={styles.cartTotalContainer}>
                     {/* <Button size="medium" variant="outlined" onClick={() => { clear(); setnoProductMessage("Muchas Gracias por tu Compra!")}}>Comprar</Button> */}
                     {/* <Button size="medium" variant="outlined" onClick={() => {<FormDialog/>}}>Comprar</Button> */}
-                    <FormDialog setnoProductMessage={setnoProductMessage} cartClear={clear}/>
-                    <Stack direction="row" spacing={1} alignItems="center"> 
+                    <FormDialog setnoProductMessage={setnoProductMessage} cartClear={clear} />
+                    <Stack direction="row" spacing={1} alignItems="center">
                         <p>Subtotal:</p>
                         <ReactTextTransition
                             children={"US$ " + cartFirebaseProducts.reduce((acc, item) => acc + item.product.price * item.quantity, 0).toFixed(2)}
                             springConfig={{ stiffness: 50, damping: 20 }}
                             overflow={false}
-                        
                         />
                     </Stack>
-                </div>
+                </div>}
             </div>
         </>
     )
