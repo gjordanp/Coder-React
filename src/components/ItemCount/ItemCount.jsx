@@ -32,7 +32,7 @@ function ItemCount({ product, stock, initial, hideAddToCart, onChange }) {
                 <AddCircleOutlineRoundedIcon fontSize='medium' />
             </IconButton>
             {!hideAddToCart &&
-                <Button size="medium" variant="outlined" onClick={() => { addToCart(product, count); navigate('/cart'); console.log("click") }}>Agregar al Carrito</Button>
+                <Button size="medium" variant="outlined" onClick={() => { addToCart(product, count); navigate('/cart');}}>Agregar al Carrito</Button>
             }
 
         </div>

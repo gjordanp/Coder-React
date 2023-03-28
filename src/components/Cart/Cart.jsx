@@ -9,6 +9,7 @@ import HighlightOffRoundedIcon from '@mui/icons-material/HighlightOffRounded';
 import { height, textAlign } from '@mui/system';
 import { red } from '@mui/material/colors';
 import ReactTextTransition, { presets } from "react-text-transition";
+import FormDialog from '../FormDialog/FormDialog';
 
 
 
@@ -43,7 +44,7 @@ function Cart() {
                     {cartFirebaseProducts.length === 0 ?
                         <div className={styles.emptyCart}>
                             <RemoveShoppingCartIcon fontSize='large' />
-                            <h3> {noProductMessage} </h3>
+                            <h4> {noProductMessage} </h4>
                         </div>
                         :
                         cartFirebaseProducts.map((item) =>
@@ -76,8 +77,10 @@ function Cart() {
                 </div>
                 {/* <div className={styles.cartTotalContainer}>Subtotal: {"$" + cartList.reduce((acc, item) => acc + item.product.price * item.quantity, 0).toFixed(2)} </div> */}
                 <div className={styles.cartTotalContainer}>
-                    <Button size="medium" variant="outlined" onClick={() => { clear(); setnoProductMessage("Muchas Gracias por tu Compra!")}}>Comprar</Button>
-                    <Stack direction="row" spacing={2} alignItems="center"> 
+                    {/* <Button size="medium" variant="outlined" onClick={() => { clear(); setnoProductMessage("Muchas Gracias por tu Compra!")}}>Comprar</Button> */}
+                    {/* <Button size="medium" variant="outlined" onClick={() => {<FormDialog/>}}>Comprar</Button> */}
+                    <FormDialog setnoProductMessage={setnoProductMessage} cartClear={clear}/>
+                    <Stack direction="row" spacing={1} alignItems="center"> 
                         <p>Subtotal:</p>
                         <ReactTextTransition
                             children={"US$ " + cartFirebaseProducts.reduce((acc, item) => acc + item.product.price * item.quantity, 0).toFixed(2)}

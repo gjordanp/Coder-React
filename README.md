@@ -8,3 +8,12 @@ Proyecto de React para Cordehouse
 - Eventos
 - Rendering
 - Firebase/Firestore
+
+#Librerias Utilizadas
+- Material UI
+Se usaron componentes como el AppBar, Cards, Iconos entre otros
+
+- ReactTextTransition 
+Para agregar animacion cuando datos cambian
+
+

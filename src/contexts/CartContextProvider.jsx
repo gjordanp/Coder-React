@@ -1,5 +1,5 @@
 import db from '../../db/firebase-config'
-import { addDoc, collection, deleteDoc, doc, getDocs, setDoc, updateDoc } from 'firebase/firestore';
+import { addDoc, collection, deleteDoc, doc, getDoc, getDocs, setDoc, updateDoc } from 'firebase/firestore';
 import { createContext, useEffect, useState } from 'react'
 export const CartContext = createContext();
 
@@ -11,38 +11,30 @@ export const CartContextProvider = ({ children }) => {
 
     useEffect(() => {
         fb_getCartItems();
+        console.log("CartItems")
     }, [])
-    useEffect(() => {
-        fb_getCartItems();
-    }, [cartFirebaseProducts])
+    // useEffect(() => {
+    //     fb_getCartItems();
+    //     console.log("CartItems")
+    // }, [cartFirebaseProducts])
 
-    //useEffect(() => {setCartList(cartFirebaseProducts);}, [cartFirebaseProducts])
 
     const addToCart = (product, qty) => {//implementa la funcionalidad para agregar un producto al carrito
         if (isInCart(product.id)) {
-            //console.log(product.id)
-            //console.log(isInCart(product.id))
             resetQty(product.id, qty)
         }
         else {
-
-            //setCartList([...cartList, { "product": product, "quantity": qty }])
-            //console.log(cartList);
             fb_addCartItem({ "product": product, "quantity": qty }, product.id);
             //console.log(cartFirebaseProducts);
         }
     }
     const clear = () => {	//implementa la funcionalidad para dejar el carrito vacío
-        //setCartList([]);
         fb_deleteCart();
     }
     const removeItem = (id) => {	//implementa la funcionalidad para borrar un producto del carrito
-        //setCartList(cartList.filter((obj) => obj.product.id !== id))
         fb_deleteCartItem(id);
     }
     const isInCart = (id) => {	//implementa la funcionalidad para verificar si un producto ya está en el carrito
-        // console.log(cartList.length);
-        // console.log(cartList.length === 0);
         return (cartFirebaseProducts.length === 0)?false:cartFirebaseProducts.some((obj) => obj.product.id === id)
     }
 
@@ -51,7 +43,6 @@ export const CartContextProvider = ({ children }) => {
     }
 
     const resetQty = (id, qty) => {	//implementa la funcionalidad para resetear la cantidad de un producto en el carrito
-        //setCartList(cartList.map((obj) => obj.product.id === id ? { "product": obj.product, "quantity": qty } : obj));
         fb_updateCartItemQuantity(id, qty);
     }
 
@@ -85,10 +76,27 @@ export const CartContextProvider = ({ children }) => {
         fb_getCartItems();
     }
 
+    const fb_addOrder = async (order, id) => {
+        const ref = doc(db, "orders", id);
+        const docRef =await setDoc(ref, order);
+        return fb_getOrder(id)
+    }
+
+    const fb_getOrders = async () => {
+        const ordersCollectionRef = collection(db, 'orders')
+        const ordersCollection = await getDocs(ordersCollectionRef)
+        const orders = ordersCollection.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
+        return orders;
+    }
+
+    const fb_getOrder = async (id) => {
+        const order = await getDoc(doc(db, 'orders', id))
+        return { id: order.id, ...order.data() }
+    }
 
 
     return (
-        <CartContext.Provider value={{cartFirebaseProducts, addToCart, clear, removeItem, isInCart, resetQty, cartCount, fb_getCartItems}}>
+        <CartContext.Provider value={{cartFirebaseProducts, addToCart, clear, removeItem, isInCart, resetQty, cartCount, fb_getCartItems, fb_addOrder, fb_getOrders}}>
             {children}
         </CartContext.Provider>
     )
