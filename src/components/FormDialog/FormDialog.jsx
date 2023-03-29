@@ -96,7 +96,7 @@ export default function FormDialog({ setnoProductMessage, cartClear }) {
                 <DialogTitle>¡Ya estas muy cerca!</DialogTitle>
                 <DialogContent>
                     <DialogContentText>
-                        Solo necesitamos algunos datos para poder terminar tu compra.
+                        Solo necesitamos algunos datos para terminar tu compra.
                     </DialogContentText>
                     <TextField
                         autoFocus
@@ -148,12 +148,12 @@ export default function FormDialog({ setnoProductMessage, cartClear }) {
                         fullWidth
                         variant="outlined"
                         value={emailConfirm}
-                        onChange={(e) => { setEmailConfirm(e.target.value); validateEmail(e.target.value); confirmEmail(e.target.value) }}
+                        onChange={(e) => { setEmailConfirm(e.target.value); validateEmail(email); confirmEmail(e.target.value) }}
                     />
                 </DialogContent>
                 <DialogActions sx={{ margin: "0 16px 20px 0" }}>
                     <Button variant="outlined" onClick={handleClose}>Cancelar</Button>
-                    <Button variant="outlined" onClick={handleBuy} disabled={!isEmailConfirmed || !isEmailValid || !isNameValid || !isLastNameValid}>Comprar</Button>
+                    <Button variant="outlined" onClick={handleBuy} disabled={name==""||lastname==""||email==""||emailConfirm==""||!isEmailConfirmed || !isEmailValid || !isNameValid || !isLastNameValid}>Comprar</Button>
                 </DialogActions>
             </Dialog>
         </div>

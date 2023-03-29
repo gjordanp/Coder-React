@@ -16,7 +16,7 @@ const products = [
         },
         "price": 1929,
         "rating": {
-            "rate": 0.7,
+            "rate": 4.0,
             "count": 120
         }
     },
@@ -37,7 +37,7 @@ const products = [
         },
         "price": 3499,
         "rating": {
-            "rate": 0.7,
+            "rate": 4.5,
             "count": 120
         }
     },
@@ -58,7 +58,7 @@ const products = [
         },
         "price": 1390,
         "rating": {
-            "rate": 0.7,
+            "rate": 4.0,
             "count": 120
         }
     },
@@ -79,7 +79,7 @@ const products = [
         },
         "price": 1800,
         "rating": {
-            "rate": 0.7,
+            "rate": 4.5,
             "count": 120
         }
     },
@@ -100,7 +100,7 @@ const products = [
         },
         "price": 2490,
         "rating": {
-            "rate": 0.7,
+            "rate": 4.5,
             "count": 120
         }
     },
@@ -121,7 +121,7 @@ const products = [
         },
         "price": 1390,
         "rating": {
-            "rate": 0.7,
+            "rate": 4.0,
             "count": 120
         }
     },
@@ -142,7 +142,7 @@ const products = [
         },
         "price": 1640,
         "rating": {
-            "rate": 0.7,
+            "rate": 4.5,
             "count": 120
         }
     },
@@ -163,7 +163,7 @@ const products = [
         },
         "price": 2590,
         "rating": {
-            "rate": 0.7,
+            "rate": 4.5,
             "count": 120
         }
     },
@@ -184,7 +184,7 @@ const products = [
         },
         "price": 1950,
         "rating": {
-            "rate": 0.7,
+            "rate": 4.5,
             "count": 120
         }
     },
@@ -205,7 +205,7 @@ const products = [
         },
         "price": 1770,
         "rating": {
-            "rate": 0.7,
+            "rate": 4.5,
             "count": 120
         }
     },
@@ -226,7 +226,7 @@ const products = [
         },
         "price": 1390,
         "rating": {
-            "rate": 0.7,
+            "rate": 4.0,
             "count": 120
         }
     },
@@ -247,7 +247,7 @@ const products = [
         },
         "price": 1800,
         "rating": {
-            "rate": 0.7,
+            "rate": 4.5,
             "count": 120
         }
     },
