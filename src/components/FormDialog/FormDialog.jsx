@@ -14,12 +14,14 @@ export default function FormDialog({ setnoProductMessage, cartClear }) {
     const [open, setOpen] = useState(false);
     const [name, setName] = useState('');
     const [lastname, setLastname] = useState('');
+    const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
     const [emailConfirm, setEmailConfirm] = useState('');
     const [isNameValid, setisNameValid] = useState(true);
     const [isLastNameValid, setisLastNameValid] = useState(true);
     const [isEmailValid, setisEmailValid] = useState(true);
     const [isEmailConfirmed, setisEmailConfirmed] = useState(true);
+    const [isPhoneValid, setisPhoneValid] = useState(true);
     const { fb_addOrder, fb_getOrders, cartFirebaseProducts, orders } = useContext(CartContext);
 
     const handleClickOpen = () => {
@@ -80,6 +82,15 @@ export default function FormDialog({ setnoProductMessage, cartClear }) {
         }
     }
 
+    const validatePhone = (value) => {
+        let validRegex = /^[0-9]*$/;
+        if (value.match(validRegex)) {
+            setisPhoneValid(true);
+        } else {
+            setisPhoneValid(false);
+        }
+    }
+
     // const validateInputs = () => {
     //     validateEmail(email);
     //     validateLastName(lastname);
@@ -99,7 +110,6 @@ export default function FormDialog({ setnoProductMessage, cartClear }) {
                         Solo necesitamos algunos datos para terminar tu compra.
                     </DialogContentText>
                     <TextField
-                        autoFocus
                         error={!isNameValid}
                         helperText={!isNameValid ? "Ingrese un dato." : null}
                         margin="dense"
@@ -112,7 +122,6 @@ export default function FormDialog({ setnoProductMessage, cartClear }) {
                         onChange={(e) => { setName(e.target.value); validateName(e.target.value) }}
                     />
                     <TextField
-                        autoFocus
                         error={!isLastNameValid}
                         helperText={!isLastNameValid ? "Ingrese un dato." : null}
                         margin="dense"
@@ -125,7 +134,18 @@ export default function FormDialog({ setnoProductMessage, cartClear }) {
                         onChange={(e) => { setLastname(e.target.value); validateLastName(e.target.value) }}
                     />
                     <TextField
-                        autoFocus
+                        error={!isPhoneValid}
+                        helperText={!isPhoneValid ? "Ingrese un numero valido." : null}
+                        margin="dense"
+                        id="phone"
+                        label="Telefono"
+                        type="name"
+                        fullWidth
+                        variant="outlined"
+                        value={phone}
+                        onChange={(e) => { setPhone(e.target.value); validatePhone(e.target.value) }}
+                    />
+                    <TextField
                         error={!isEmailValid}
                         helperText={!isEmailValid ? "Ingrese un email valido." : null}
                         margin="dense"
@@ -138,7 +158,6 @@ export default function FormDialog({ setnoProductMessage, cartClear }) {
                         onChange={(e) => { setEmail(e.target.value); validateEmail(e.target.value); confirmEmail(e.target.value) }}
                     />
                     <TextField
-                        autoFocus
                         error={!isEmailConfirmed}
                         helperText={!isEmailConfirmed ? "Email no coincide." : null}
                         margin="dense"
@@ -153,7 +172,7 @@ export default function FormDialog({ setnoProductMessage, cartClear }) {
                 </DialogContent>
                 <DialogActions sx={{ margin: "0 16px 20px 0" }}>
                     <Button variant="outlined" onClick={handleClose}>Cancelar</Button>
-                    <Button variant="outlined" onClick={handleBuy} disabled={name==""||lastname==""||email==""||emailConfirm==""||!isEmailConfirmed || !isEmailValid || !isNameValid || !isLastNameValid}>Comprar</Button>
+                    <Button variant="outlined" onClick={handleBuy} disabled={name==""||lastname==""||email==""||emailConfirm==""||phone==""||!isEmailConfirmed || !isEmailValid || !isNameValid || !isLastNameValid|| !isPhoneValid}>Comprar</Button>
                 </DialogActions>
             </Dialog>
         </div>
